@@ -1,5 +1,5 @@
 const { totalmem, freemem, uptime } = require('os')
-const { formatBytes, formatSeconds } = require('../utils/formatters')
+const { formatBytes, formatSeconds } = require('./utils/formatters')
 
 window.addEventListener('DOMContentLoaded', () => {
   // memory
