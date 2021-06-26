@@ -1,33 +1,29 @@
+require('ejs-electron')
+const path = require('path')
+const menuTemplate = require('./menu')
 const { app, BrowserWindow, Menu } = require('electron')
 
-const menuTemplate = require('./menu')
-const path = require('path')
-
-function createWindow () {
-  // Create the browser window.
+const createWindow = () => {
   const window = new BrowserWindow({
-    width: 300,
+    width: 1000,
     height: 500,
     webPreferences: {
-      preload: path.join(__dirname, 'ui', 'memory', 'memoryPreload.js')
+      preload: path.join(__dirname, 'ui', 'preload.js')
     },
     // resizable: false
   })
 
-  window.loadFile(path.join(__dirname, 'ui', 'memory', 'memory.html'))
-
-  // window.webContents.openDevTools()
+  window.loadURL(`file://${__dirname}/ui/index.ejs`)
 }
 
 app.whenReady().then(() => {
   createWindow()
-
   // attach the menu
   const menu = Menu.buildFromTemplate(menuTemplate)
   Menu.setApplicationMenu(menu)
 
   app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    if (BrowserWindow.getAllWindows().length === 0) createMemoryWindow()
   })
 })
 
