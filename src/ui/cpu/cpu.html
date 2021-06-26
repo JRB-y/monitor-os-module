@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./cpu-style.css">
+        <title>CPU my computer</title>
+    </head>
+    <body>
+        <div id="container">
+            <h1 id="title">
+                <a href="../memory/memory.html">Memory</a>
+                <a href="./cpu.html" style="color: #0098CB;">CPUs</a>
+            </h1>
+
+            <!-- #MAIN PROCESS EVENT -->
+            <div id="cpu">
+                <div class="cpu-metric">
+                    <div class="cpu-header">Total Memory</div> <span class="cpu-value" id="cpu-totalmem"></span>
+                </div>
+                <div class="cpu-metric">
+                    <div class="cpu-header">Free Memory</div> <span class="cpu-value" id="cpu-freemem"></span>
+                </div>
+                <div class="cpu-metric">
+                    <div class="cpu-header">Uptime</div> <span class="cpu-value" id="cpu-uptime"></span>
+                </div>
+            </div>
+            <!-- end of test main process event -->
+
+        </div>
+        <!-- End of container -->
+
+
+        <!-- You can also require other files to run in this process -->
+        <script src="./cpuRenderer.js"></script>
+    </body>
+</html>
