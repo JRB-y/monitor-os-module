@@ -1,1 +1,1 @@
-# [WIP] Monitor Node 'os' module
+# [WIP] Monitor Nodejs 'os' module with Electron
