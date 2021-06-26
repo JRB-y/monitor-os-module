@@ -1,12 +1,10 @@
 const { totalmem, freemem, uptime } = require('os')
-const { formatBytes, formatSeconds } = require('../../utils/formatters')
+const { formatBytes, formatSeconds } = require('../utils/formatters')
 
-window.addEventListener('DOMContentLoaded', () => {
-  // memory
+module.exports = () => {
   const totalMemDisp = document.getElementById('memory-totalmem')
   const freeMemoryDisp = document.getElementById('memory-freemem')
   const uptimeDisp = document.getElementById('memory-uptime')
-
   setInterval(() => {
     // totalmem
     totalMemDisp.innerHTML = ''
@@ -22,6 +20,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // uptime
   }, 1000)
-
-})
-
+}
